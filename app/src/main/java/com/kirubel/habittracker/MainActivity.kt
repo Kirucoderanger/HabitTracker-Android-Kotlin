@@ -4,6 +4,8 @@ import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import android.os.Bundle
+import android.os.Parcel
+import android.os.Parcelable
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -155,7 +157,7 @@ fun HabitTrackerScreen(modifier: Modifier = Modifier) {
                             Checkbox(
                                 checked = habit.isCompleted,
                                 onCheckedChange = {
-                                    habit.isCompleted = it
+                                    habits[index] = habit.copy(isCompleted = it)
                                     saveHabits(context, habits)
                                 }
                             )
