@@ -21,6 +21,17 @@ import com.kirubel.habittracker.ui.theme.HabitTrackerTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 
+/*import com.google.firebase.auth.FirebaseAuth
+
+val auth = FirebaseAuth.getInstance()
+println("Firebase Connected: $auth")*/
+/*
+The goal of this project was to build a functional mobile app
+that allows users to manage daily habits.
+This project introduces modern Android tools such as Jetpack Compose.
+*/
+//MainActivity
+//This is the entry point of the app using Jetpack Compose.
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,11 +49,13 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+//This data class represents each habit with title and completion status.
 data class Habit(
     val title: String,
     var isCompleted: Boolean = false
 )
 
+//This function stores data using SharedPreferences and Gson for persistence
 fun saveHabits(context: Context, habits: List<Habit>) {
     val sharedPref = context.getSharedPreferences("habit_prefs", Context.MODE_PRIVATE)
     val editor = sharedPref.edit()
@@ -53,6 +66,7 @@ fun saveHabits(context: Context, habits: List<Habit>) {
     editor.apply()
 }
 
+//This function reloads any stored data in local storage whenever the app restarted
 fun loadHabits(context: Context): MutableList<Habit> {
     val sharedPref = context.getSharedPreferences("habit_prefs", Context.MODE_PRIVATE)
     val json = sharedPref.getString("habits", null)
@@ -65,9 +79,10 @@ fun loadHabits(context: Context): MutableList<Habit> {
     }
 }
 
+//UI is built using composable functions
 @Composable
 fun HabitTrackerScreen(modifier: Modifier = Modifier) {
-
+    //this is the state management which allows the UI updates to automatically
     var habitText by remember { mutableStateOf("") }
     val context = LocalContext.current
     val habits = remember {
@@ -191,3 +206,13 @@ fun PreviewHabitTracker() {
         HabitTrackerScreen()
     }
 }
+
+//Conclusion
+//This project shows how to use Kotlin in mobile development
+//Jetpack Compose UI
+//State management
+//Local data storage
+//
+//In the future, I plan to expand this app with features like notifications and cloud storage.
+//
+//Thank you for watching.

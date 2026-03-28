@@ -2,13 +2,13 @@
 
 # Overview
 
-The goal of this project was to expand my software development skills by learning mobile application development using Kotlin. After building a console-based application in the previous module, I wanted to apply my knowledge to a real-world mobile environment.
+The goal of this project was to expand my software development skills by learning mobile application development using Kotlin. After building a console-based application in kotlin, I wanted to apply my knowledge to a real-world mobile environment.
 
-The software I developed is a **Habit Tracker Android application** built using Kotlin and Jetpack Compose. This app allows users to create, manage, and track daily habits. Users can add new habits, mark them as completed, and delete them. The app also stores data locally, ensuring that habits persist even after the app is closed.
+The software I developed is a Habit Tracker Android application built using Kotlin and Jetpack Compose. This app allows users to create, manage, and track daily habits. Users can add new habits, mark them as completed, and delete them. The app also stores data locally, ensuring that habits persist even after the app is closed.
 
 The purpose of this software was to gain hands-on experience with modern Android development tools, including Jetpack Compose for UI design, state management, and local data persistence using SharedPreferences. This project helped me understand how mobile applications handle user interaction and maintain data.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/R_FuVgMQ9_g)
 
 ---
 
